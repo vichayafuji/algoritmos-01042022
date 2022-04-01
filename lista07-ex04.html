@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Frequencia</h1>
+    Coloque aqui a quantidade total de aulas:
+    <input id="ipt_total">
+    <br>
+    Coloque aqui a quantidade de aulas que você foi:
+    <input id="ipt_aula">
+    <br>
+    <button onclick="bt_calculo()">Calcular frequencia</button>
+    <br>
+    <img src="" id="spanImg" style="height: 200px">
+    <div id="spanText"></div>
+</body>
+</html>
+<script>
+    function bt_calculo()
+    {
+        var ax_total = Number (ipt_total.value)
+        var ax_aula = Number (ipt_aula.value)
+        var ax_frequencia = ax_aula / ax_total
+
+        if (ax_frequencia < 0.5)
+        {
+            spanText.innerHTML = `Você é um turista, por algum acaso?`
+        }
+        else 
+        {
+            spanText.innerHTML = `Que dedicado você é!`
+        }
+    }
+</script>

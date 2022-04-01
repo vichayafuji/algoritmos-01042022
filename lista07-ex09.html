@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="select_especie" onchange="verificar()">
+        <option value="0">- Escolha uma espécie -</option>
+        <option value="1">Ovíparos</option>
+        <option value="2">Mamíferos</option>
+    </select>
+
+        <select id="select_oviparo" style="display: none" onchange="on_oviparo()">
+            <option value="0">- Escolha um Ovíparo -</option>
+            <option value="1">Galinha</option>
+            <option value="2">Peixe</option>
+            <option value="3">Tartaruga</option>
+        </select>
+
+        <select id="select_mamifero" style="display: none" onchange="on_mamifero()">
+            <option value="0">- Escolha um mamífero -</option>
+            <option value="1">Elefante</option>
+            <option value="2">Porco</option>
+            <option value="3">Coelho</option>
+        </select>
+        <br>
+        <img src="" id="spanImg" style="height: 150px">
+        <br>
+        <div id="spanText"></div>
+        <input id="ipt_valor_oviparo" placeholder="Valor de compra do animal" style="display: none">
+        <br>
+        <button id="button_oviparo" onclick="bt_calculo1()" style="display: none">Calcular imposto</button>
+        <br>
+        <input id="ipt_valor_mamifero" placeholder="Valor de compra do animal" style="display: none">
+        <br>
+        <button id="button_mamifero" onclick="bt_calculo2()" style="display: none">Calcular imposto</button>
+        <br>
+        <div id="spanText2"></div>
+
+</body>
+</html>
+<script>
+    function verificar()
+    {
+        var ax_especie = Number (select_especie.value)
+
+        if (ax_especie == 0)
+        {
+            select_oviparo.style.display = `none`
+            select_mamifero.style.display = `none`
+            spanText.innerHTML = ``
+            ipt_valor_oviparo.style.display = `none`
+            ipt_valor_mamifero.style.display = `none`
+            button_oviparo.style.display = `none`
+            button_mamifero.style.display = `none`
+            spanText2.innerHTML = ``
+            ipt_valor_mamifero.value = ``
+            ipt_valor_oviparo.value = ``
+        }
+        else
+        {
+            if (ax_especie == 1)
+            {
+                spanText.innerHTML = ``
+                select_oviparo.style.display = `block`
+                select_mamifero.style.display = `none`
+                ipt_valor_oviparo.style.display = `none`
+                ipt_valor_mamifero.style.display = `none`
+                button_oviparo.style.display = `none`
+                button_mamifero.style.display = `none`
+                spanText2.innerHTML = ``
+                ipt_valor_mamifero.value = ``
+                ipt_valor_oviparo.value = ``
+            }
+            else
+            {
+                spanText.innerHTML = ``
+                select_oviparo.style.display = `none`
+                select_mamifero.style.display = `block`
+                ipt_valor_oviparo.style.display = `none`
+                ipt_valor_mamifero.style.display = `none`
+                button_oviparo.style.display = `none`
+                button_mamifero.style.display = `none`
+                spanText2.innerHTML = ``
+                ipt_valor_mamifero.value = ``
+                ipt_valor_oviparo.value = ``
+            }
+        }
+    }
+    function on_oviparo()
+    {
+        var ax_oviparo = Number (select_oviparo.value)
+        if (ax_oviparo == 0)
+        {
+            ipt_valor_oviparo.style.display = `none`
+            ipt_valor_mamifero.style.display = `none`
+            button_oviparo.style.display = `none`
+            button_mamifero.style.display = `none`
+            spanText.innerHTML = ``
+            spanText2.innerHTML = ``
+            ipt_valor_mamifero.value = ``
+        }
+        if (ax_oviparo == 1)
+        {
+            spanText.innerHTML = `Galinha`
+            ipt_valor_oviparo.style.display = `block`
+            ipt_valor_mamifero.style.display = `none`
+            button_oviparo.style.display = `block`
+            button_mamifero.style.display = `none`
+            spanText2.innerHTML = ``
+            ipt_valor_mamifero.value = ``
+        }
+        if (ax_oviparo == 2)
+        {
+            spanText.innerHTML = `Peixe`
+            ipt_valor_oviparo.style.display = `block`
+            ipt_valor_mamifero.style.display = `none`
+            button_oviparo.style.display = `block`
+            button_mamifero.style.display = `none`
+            spanText2.innerHTML = ``
+            ipt_valor_mamifero.value = ``
+        }
+        if (ax_oviparo == 3)
+        {
+            spanText.innerHTML = `Tartaruga`
+            ipt_valor_oviparo.style.display = `block`
+            ipt_valor_mamifero.style.display = `none`
+            button_oviparo.style.display = `block`
+            button_mamifero.style.display = `none`
+            spanText2.innerHTML = ``
+            ipt_valor_mamifero.value = ``
+        }
+
+    }
+    function on_mamifero ()
+    {
+        var ax_mamifero = Number (select_mamifero.value)
+        if (ax_mamifero == 0)
+        {
+            spanText.innerHTML = ``
+            ipt_valor_oviparo.style.display = `none`
+            ipt_valor_mamifero.style.display = `none`
+            button_oviparo.style.display = `none`
+            button_mamifero.style.display = `none`
+            spanText2.innerHTML = ``
+            ipt_valor_oviparo.value = ``
+        }
+        if (ax_mamifero == 1)
+        {
+            spanText.innerHTML = `Elefante`
+            ipt_valor_oviparo.style.display = `none`
+            ipt_valor_mamifero.style.display = `block`
+            button_oviparo.style.display = `none`
+            button_mamifero.style.display = `block`
+            spanText2.innerHTML = ``
+            ipt_valor_oviparo.value = `` 
+        }
+        if (ax_mamifero == 2)
+        {
+            spanText.innerHTML = `Porco`
+            ipt_valor_oviparo.style.display = `none`
+            ipt_valor_mamifero.style.display = `block`
+            button_oviparo.style.display = `none`
+            button_mamifero.style.display = `block`
+            spanText2.innerHTML = ``
+            ipt_valor_oviparo.value = ``
+        }
+        if (ax_mamifero == 3)
+        {
+            spanText.innerHTML = `Coelho`
+            ipt_valor_oviparo.style.display = `none`
+            ipt_valor_mamifero.style.display = `block`
+            button_oviparo.style.display = `none`
+            button_mamifero.style.display = `block`
+            spanText2.innerHTML = `` 
+            ipt_valor_oviparo.value = ``
+        }
+    }
+    function bt_calculo1()
+    {
+        var ax_oviparo = Number (ipt_valor_oviparo.value)
+        var ax_final1 = ax_oviparo * 0.05
+        spanText2.innerHTML = `O imposto será de R$ ${ax_final1.toFixed(2)}`    
+    }
+    function bt_calculo2()
+    {
+        var ax_mamifero = Number (ipt_valor_mamifero.value)
+        var ax_final2 = ax_mamifero * 0.10
+        spanText2.innerHTML = `O imposto será de R$ ${ax_final2.toFixed(2)}`  
+    }
+
+</script>
