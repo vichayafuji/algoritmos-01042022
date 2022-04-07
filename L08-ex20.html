@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="slct_item1">
+        <option value="0">--selecionar--</option>
+        <option value="1">Cereais</option>
+        <option value="2">Queijos</option>
+    </select>
+    <select id="slct_item2">
+        <option value="0">--selecionar--</option>
+        <option value="1">Refrigerada</option>
+        <option value="2">Seca</option>
+    </select>
+    <br>
+    <button onclick="bt_analisar()">Analisar</button>
+    <div id="spanText"></div>
+</body>
+</html>
+<script>
+    function bt_analisar()
+    {
+        var ax_item1 = slct_item1.value
+        var ax_item2 = slct_item2.value
+        
+        if (ax_item1 == 1 && ax_item2 == 1)
+        {
+            spanText.innerHTML = `Retire o cereal da geladeira`
+        }
+        else if (ax_item1 == 1 && ax_item2 == 2)
+        {
+            spanText.innerHTML = `Muito bem, cereal no lugar certo`
+        }
+        else if (ax_item1 == 2 && ax_item2 == 2)
+        {
+            spanText.innerHTML = `Ponha o queijo na geladeira`
+        }
+        else if (ax_item1 == 2 && ax_item2 == 1)
+        {
+            spanText.innerHTML = `Muito bem, queijo no lugar certo`
+        }
+        else
+        {
+            spanText.innerHTML = ``
+        }
+    }
+</script>

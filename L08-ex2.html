@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Economia</h1>
+    <button onclick="bt_guardar()">Guardar R$ 5.00</button>
+    <button onclick="bt_gastar()">Gastar R$ 10.00</button>
+    <div id="spanText1">Valor Guardado: R$ 0.00</div>
+    <div id="spanText2"></div>
+</body>
+</html>
+<script>
+    var ax_renda = 0
+    function bt_guardar()
+    {
+        ax_renda = ax_renda + 5
+        if (ax_renda < 0 && ax_renda >= -20)
+        {
+            spanText1.innerHTML = `Valor Guardado: R$ ${ax_renda.toFixed(2)}`
+            spanText2.innerHTML = `Finanças em perigo!`
+        }
+        else if (ax_renda >= 0 && ax_renda <= 100)
+        {
+            spanText1.innerHTML = `Valor Guardado: R$ ${ax_renda.toFixed(2)}`
+            spanText2.innerHTML = `Finanças OK`
+        }
+        else if (ax_renda < -20)
+        {
+            spanText1.innerHTML = `Valor Guardado: R$ ${ax_renda.toFixed(2)}`
+            spanText2.innerHTML = `Quase um Palmeiras`
+        }
+        else
+        {
+            spanText1.innerHTML = `Valor Guardado: R$ ${ax_renda.toFixed(2)}`
+            spanText2.innerHTML = `OSTENTAÇÃO`
+        }
+    }
+    function bt_gastar()
+    {
+        ax_renda = ax_renda - 10
+        if (ax_renda < 0 && ax_renda >= -20)
+        {
+            spanText1.innerHTML = `Valor Guardado: R$ ${ax_renda.toFixed(2)}`
+            spanText2.innerHTML = `Finanças em perigo!`
+        }
+        else if (ax_renda >= 0 && ax_renda <= 100)
+        {
+            spanText1.innerHTML = `Valor Guardado: R$ ${ax_renda.toFixed(2)}`
+            spanText2.innerHTML = `Finanças OK`
+        }
+        else if (ax_renda < -20)
+        {
+            spanText1.innerHTML = `Valor Guardado: R$ ${ax_renda.toFixed(2)}`
+            spanText2.innerHTML = `Quase um Palmeiras`
+        }
+        else
+        {
+            spanText1.innerHTML = `Valor Guardado: R$ ${ax_renda.toFixed(2)}`
+            spanText2.innerHTML = `OSTENTAÇÃO`
+        }
+    }
+
+</script>

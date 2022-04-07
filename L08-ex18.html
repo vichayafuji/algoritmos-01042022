@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Batalha do Século</h1>
+    <div id="spanText1">Vida do lutador: 1000</div>
+    <div id="spanText2"> </div>
+    <img id="img1" src="" style="height: 150px">
+    <br>
+    <button onclick="bt_apanhar()">Apanhar</button>
+    <button onclick="bt_concentrar()">Concentrar força</button>
+</body>
+</html>
+<script>
+    var ax_vida = 1000
+
+    function bt_apanhar()
+    {
+        if (ax_vida > 100)
+        {
+            ax_vida = ax_vida - 100
+            spanText1.innerHTML = `Vida do lutador: ${ax_vida.toFixed(0)}`
+            spanText2.innerHTML = `O Lutador ainda continua vivo!`
+        }
+        else if (ax_vida > 0 && ax_vida <= 100)
+        {
+            ax_vida = ax_vida - 100
+            spanText1.innerHTML = `Vida do lutador: ${ax_vida.toFixed(0)}`
+            spanText2.innerHTML = `Você já era!`
+            img1.src = `https://ovicio.com.br/wp-content/uploads/2019/11/20191109-eiuqfv6vuaabtis.jpg`
+        }
+        else
+        {
+            spanText1.innerHTML = `Vida do lutador: ${ax_vida.toFixed(0)}`
+            spanText2.innerHTML = `Você já era!`
+        }
+
+    }
+    function bt_concentrar()
+        {
+        if (ax_vida < 1000 && ax_vida > 0)
+        {
+            ax_vida = ax_vida * 1.05
+            spanText1.innerHTML = `Vida do lutador: ${ax_vida.toFixed(0)}`
+            spanText2.innerHTML = `O Lutador ainda continua vivo!`
+        }
+        else if (ax_vida <= 0)
+        {
+            spanText1.innerHTML = `Vida do lutador: ${ax_vida.toFixed(0)}`
+            spanText2.innerHTML = `Você já era!`
+        }
+        else
+        {
+            spanText1.innerHTML = `Vida do lutador: ${ax_vida.toFixed(0)}`
+            spanText2.innerHTML = `O Lutador ainda continua vivo!`
+        }
+    }
+</script>
